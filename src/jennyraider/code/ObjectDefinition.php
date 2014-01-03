@@ -1,4 +1,4 @@
-<?php namespace codenamegary\l4generators;
+<?php namespace JennyRaider\Code;
 
 use Exception;
 
@@ -64,7 +64,7 @@ class ObjectDefinition extends ObjectNameDefinition {
     }
 
     /**
-     * @return codenamegary\l4generators\ObjectPresenter
+     * @return JennyRaider\Code\ObjectPresenter
      */
     public function presenter()
     {

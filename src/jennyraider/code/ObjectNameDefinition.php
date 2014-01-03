@@ -1,4 +1,4 @@
-<?php namespace codenamegary\l4generators;
+<?php namespace JennyRaider\Code;
 
 use Exception;
 
@@ -213,7 +213,7 @@ class ObjectNameDefinition {
      * 
      * @param string    $scope ("public", "private" or "protected")
      * @param string    $description
-     * @return codenamegary\l4generators\VariableDefinition
+     * @return JennyRaider\Code\VariableDefinition
      */
     public function getVariableDefinition($scope, $description = null)
     {

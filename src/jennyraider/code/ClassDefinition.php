@@ -1,4 +1,4 @@
-<?php namespace codenamegary\l4generators;
+<?php namespace JennyRaider\Code;
 
 class ClassDefinition extends ObjectDefinition {
     

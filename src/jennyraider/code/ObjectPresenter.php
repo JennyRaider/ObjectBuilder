@@ -1,9 +1,9 @@
-<?php namespace codenamegary\l4generators;
+<?php namespace JennyRaider\Code;
 
 class ObjectPresenter {
     
     /**
-     * @var codenamegary\l4generators\ObjectDefinition
+     * @var JennyRaider\Code\ObjectDefinition
      */
     protected $objectDefinition;
     

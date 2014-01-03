@@ -1,4 +1,4 @@
-<?php namespace codenamegary\l4generators;
+<?php namespace JennyRaider\Code;
 
 class VariableDefinition {
 
@@ -18,7 +18,7 @@ class VariableDefinition {
     public $type;
 
     /**
-     * @var codenamegary\l4generators\ObjectNameDefinition
+     * @var JennyRaider\Code\ObjectNameDefinition
      */
     public $objectNameDefinition;
     

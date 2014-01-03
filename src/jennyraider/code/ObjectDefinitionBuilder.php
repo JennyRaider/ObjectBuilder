@@ -1,11 +1,11 @@
-<?php namespace codenamegary\l4generators;
+<?php namespace JennyRaider\Code;
 
 class ObjectDefinitionBuilder {
     
     /**
      * The object being built.
      * 
-     * @var codenamegary\l4generators\ObjectDefinition
+     * @var JennyRaider\Code\ObjectDefinition
      */
     protected $objectDefinition;
     
@@ -19,8 +19,8 @@ class ObjectDefinitionBuilder {
     }
     
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function imports(ObjectNameDefinition $objectDefintion)
     {
@@ -30,7 +30,7 @@ class ObjectDefinitionBuilder {
 
     /**
      * @param  string   $fullyQualifiedName
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function importsName($fullyQualifiedName)
     {
@@ -39,8 +39,8 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function injects(ObjectDefinition $objectDefinition)
     {
@@ -52,7 +52,7 @@ class ObjectDefinitionBuilder {
 
     /**
      * @param  string   $fullyQualifiedName
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function injectsName($fullyQualifiedName, $alias = null)
     {
@@ -62,8 +62,8 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function uses(ObjectDefinition $objectDefinition)
     {
@@ -74,7 +74,7 @@ class ObjectDefinitionBuilder {
 
     /**
      * @param  string   $fullyQualifiedName
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function usesName($fullyQualifiedName)
     {
@@ -83,8 +83,8 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function extend(ObjectDefinition $objectDefinition)
     {
@@ -95,7 +95,7 @@ class ObjectDefinitionBuilder {
 
     /**
      * @param  string   $fullyQualifiedName
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function extendName($fullyQualifiedName)
     {
@@ -104,8 +104,8 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function implement(ObjectDefinition $objectDefinition)
     {
@@ -116,7 +116,7 @@ class ObjectDefinitionBuilder {
 
     /**
      * @param  string   $fullyQualifiedName
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function implementName($fullyQualifiedName)
     {
@@ -125,8 +125,8 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function objectVariable($scope, ObjectDefinition $objectDefinition)
     {
@@ -135,8 +135,8 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function objectVariableName($scope, $fullyQualifiedName)
     {
@@ -145,8 +145,8 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function defineVariable(VariableDefinition $variableDefinition)
     {
@@ -155,8 +155,8 @@ class ObjectDefinitionBuilder {
     } 
 
     /**
-     * @param  codenamegary\l4generators\ObjectDefinition $objectDefinition
-     * @return codenamegary\l4generators\ObjectDefinitionBuilder
+     * @param  JennyRaider\Code\ObjectDefinition $objectDefinition
+     * @return JennyRaider\Code\ObjectDefinitionBuilder
      */
     public function defineVariableName($scope, $name, $type, $description = null)
     {
@@ -165,7 +165,7 @@ class ObjectDefinitionBuilder {
     }
 
     /**
-     * @return codenamegary\l4generators\ObjectDefinition
+     * @return JennyRaider\Code\ObjectDefinition
      */
     public function make()
     {
