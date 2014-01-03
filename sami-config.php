@@ -16,6 +16,6 @@ return new Sami($iterator, array(
     'versions'             => $versions,
     'title'                => 'JennyRaider\Code',
     'build_dir'            => __DIR__.'/docs/code/%version%',
-    'cache_dir'            => __DIR__.'/docs-cache/sf2/%version%',
+    'cache_dir'            => __DIR__.'/docs-cache/code/%version%',
     'default_opened_level' => 2,
 ));
