@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>JennyRaider\Code\ObjectNameDefinition | </title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title"></div>
+
+            <div class="type">Class</div>
+    <h1><a href="../../JennyRaider/Code.html">JennyRaider\Code</a>\ObjectNameDefinition</h1>
+    </div>
+        <div class="content">
+                <p>    class
+    <strong>ObjectNameDefinition</strong></p>
+
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(string $fullyQualifiedName = null)
+                    <p>See the definition for $this->fullyQualifiedName.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getFullyQualifiedName">getFullyQualifiedName</a>()
+                    <p>Returns a formatted / trimmed version of the fully qualified name of this object including the class name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setAlias">setAlias</a>(string $alias)
+                    <p>Aliases are used when generating "Use" statements in the import section of the object.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getAlias">getAlias</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getName">getName</a>()
+                    <p>Returns the object name sans namespaces.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getVarName">getVarName</a>()
+                    <p>See: $this->getVarNameFrom()</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed
+                </td>
+                <td class="last">
+                    <a href="#method_getNamespaces">getNamespaces</a>()
+                    <p>Will return an array of namespaces if they exist or false if the object is not in a namespace.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed
+                </td>
+                <td class="last">
+                    <a href="#method_getNamespace">getNamespace</a>()
+                    <p>Returns the fully qualified namespace that the object will be defined in if it exists or false if the object does not have a namespace defined.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\Code\JennyRaider\Code\VariableDefinition">VariableDefinition</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_getVariableDefinition">getVariableDefinition</a>(string $scope, string $description = null)
+                    <p>Takes a scope and description and returns a variable definition that represents this object name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_toArray">toArray</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___toString">__toString</a>()
+                    <p>
+</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 43</div>
+        <code>            public            
+    <strong>__construct</strong>(string $fullyQualifiedName = null)</code>
+    </h3>
+    <div class="details">
+        <p>See the definition for $this->fullyQualifiedName.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$fullyQualifiedName</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getFullyQualifiedName">
+        <div class="location">at line 54</div>
+        <code>            public            string
+    <strong>getFullyQualifiedName</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns a formatted / trimmed version of the fully qualified name of this object including the class name.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setAlias">
+        <div class="location">at line 67</div>
+        <code>            public            
+    <strong>setAlias</strong>(string $alias)</code>
+    </h3>
+    <div class="details">
+        <p>Aliases are used when generating "Use" statements in the import section of the object.</p>
+        <p>E.g...</p>
+
+<p>use Namespace\ObjectName as Alias;</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$alias</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getAlias">
+        <div class="location">at line 76</div>
+        <code>            public            string
+    <strong>getAlias</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getName">
+        <div class="location">at line 100</div>
+        <code>            public            string
+    <strong>getName</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns the object name sans namespaces.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getVarName">
+        <div class="location">at line 110</div>
+        <code>            public            string
+    <strong>getVarName</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>See: $this->getVarNameFrom()</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getNamespaces">
+        <div class="location">at line 121</div>
+        <code>            public            mixed
+    <strong>getNamespaces</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Will return an array of namespaces if they exist or false if the object is not in a namespace.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getNamespace">
+        <div class="location">at line 133</div>
+        <code>            public            mixed
+    <strong>getNamespace</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns the fully qualified namespace that the object will be defined in if it exists or false if the object does not have a namespace defined.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getVariableDefinition">
+        <div class="location">at line 218</div>
+        <code>            public            <abbr title="JennyRaider\Code\JennyRaider\Code\VariableDefinition">VariableDefinition</abbr>
+    <strong>getVariableDefinition</strong>(string $scope, string $description = null)</code>
+    </h3>
+    <div class="details">
+        <p>Takes a scope and description and returns a variable definition that represents this object name.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$scope</td>
+                <td>("public", "private" or "protected")</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$description</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\Code\JennyRaider\Code\VariableDefinition">VariableDefinition</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_toArray">
+        <div class="location">at line 223</div>
+        <code>            public            
+    <strong>toArray</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___toString">
+        <div class="location">at line 228</div>
+        <code>            public            
+    <strong>__toString</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>
+</p>
+        <p>
+</p>
+        <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
