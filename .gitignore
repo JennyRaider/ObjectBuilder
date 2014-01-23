@@ -1,3 +1,4 @@
 /vendor
 .project
 /docs-cache
+composer.lock
