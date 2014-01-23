@@ -20,7 +20,7 @@
 namespace JennyRaider\ObjectBuilder;
 
 interface ObjectBuilderInterface {
-    
+
     /**
      * The constructor takes 2 arguments in order to build the base object definition it requires.
      *
@@ -28,7 +28,7 @@ interface ObjectBuilderInterface {
      * @param string    $type                   Example: "class" or "interface" or "final class"
      */
     public function __construct($fullyQualifiedName, $type);
-    
+
     /**
      * Adds a definition to import, e.g. - "use" in the top of the file.
      *
@@ -123,11 +123,11 @@ interface ObjectBuilderInterface {
      * Adds a variable into the class to represent the specified object. For scope,
      * specify "private", "protected" or "public". You may also prefix scope with
      * "final" if desired.
-     * 
+     *
      * This function will take the name of the specified object, strip out any generally
      * undesired words (Interface, Class, etc.) and create a pretty variable name
      * that will be defined in the class.
-     * 
+     *
      * E.g.: An object named "UserRepositoryInterface" would be defined in the class
      *       as "$userRepository"
      *
@@ -170,8 +170,5 @@ interface ObjectBuilderInterface {
      * @return JennyRaider\ObjectBuilder\ObjectDefinition
      */
     public function make();
-    
-}
 
-    
 }
