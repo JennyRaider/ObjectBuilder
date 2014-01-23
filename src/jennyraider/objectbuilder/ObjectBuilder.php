@@ -1,6 +1,8 @@
-<?php namespace JennyRaider\ObjectBuilder;
+<?php
 
-class ObjectDefinitionBuilder {
+namespace JennyRaider\ObjectBuilder;
+
+class ObjectBuilder implements ObjectBuilderInterface {
     
     /**
      * The object being built.
