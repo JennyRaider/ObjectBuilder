@@ -14,7 +14,7 @@ $versions = GitVersionCollection::create($dir)->add('master', 'master branch');
 return new Sami($iterator, array(
     'theme'                => 'enhanced',
     'versions'             => $versions,
-    'title'                => 'JennyRaider\Code',
+    'title'                => 'JennyRaider\ObjectBuilder',
     'build_dir'            => __DIR__.'/docs/code/%version%',
     'cache_dir'            => __DIR__.'/docs-cache/code/%version%',
     'default_opened_level' => 2,
