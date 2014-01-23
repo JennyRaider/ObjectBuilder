@@ -14,7 +14,15 @@ class ObjectBuilderTest extends PHPUnit_Framework_TestCase {
     
     public function testReturnsObjectDefinition()
     {
-        $this->assertInstanceOf(ObjectDefinition, $this->builder->make());
+        $this->assertInstanceOf('JennyRaider\ObjectBuilder\ObjectDefinition', $this->builder->make());
+    }
+    
+    public function testDefinitionExtendsFoo()
+    {
+        $this->builder->extendName('MyApp\Component\Foo');
+        $extends = $this->builder->make()->get('extend');
+        $foo = $extends[0];
+        $this->assertTrue($foo->get('name') === 'Foo');
     }
     
 }

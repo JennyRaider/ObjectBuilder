@@ -95,6 +95,8 @@ class ObjectDefinition extends ObjectNameDefinition {
     
     public function get($key)
     {
+        $getterName = 'get' . ucfirst($key);
+        if(method_exists($this, $getterName)) return $this->{$getterName}();
         return $this->attributes[$key];
     }
     

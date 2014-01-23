@@ -19,8 +19,8 @@
         "sami/sami": "dev-master"
     },
     "autoload": {
-        "psr-0": {
-            "JennyRaider\\ObjectBuilder\\": "src/"
+        "psr-4": {
+            "JennyRaider\\ObjectBuilder\\": "src/jennyraider/objectbuilder/"
         }
     },
     "minimum-stability": "dev"
