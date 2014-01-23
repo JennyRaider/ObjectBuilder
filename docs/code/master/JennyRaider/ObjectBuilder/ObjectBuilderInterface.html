@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>JennyRaider\ObjectBuilder\ObjectBuilderInterface | </title>
+                    <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="../../classes.html">Classes</a></li>
+                            <li><a href="../../namespaces.html">Namespaces</a></li>
+                        <li><a href="../../interfaces.html">Interfaces</a></li>
+            <li><a href="../../traits.html">Traits</a></li>
+            <li><a href="../../doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title"></div>
+
+            <div class="type">Interface</div>
+    <h1><a href="../../JennyRaider/ObjectBuilder.html">JennyRaider\ObjectBuilder</a>\ObjectBuilderInterface</h1>
+    </div>
+        <div class="content">
+                <p>    interface
+    <strong>ObjectBuilderInterface</strong></p>
+
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(string $fullyQualifiedName, string $type)
+                    <p>The constructor takes 2 arguments in order to build the base object definition it requires.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_imports">imports</a>(<a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a> $objectDefintion)
+                    <p>Adds a definition to import, e.g.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_importsName">importsName</a>(string $fullyQualifiedName)
+                    <p>Rather than define and object and pass it to import, you can simply use this function for convenience and give it a fully qualified class name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_injects">injects</a>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)
+                    <p>Specifies an object that should be imported and then injected into a constructor.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_injectsName">injectsName</a>($fullyQualifiedName, $alias = null)
+                    <p>Same as injects but accetps a fully qualified class name instead of a pre-built object definition for convenience.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_uses">uses</a>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)
+                    <p>Specifies a trait to be used by the object.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_usesName">usesName</a>(string $fullyQualifiedName)
+                    <p>Same as uses() but accepts a fully qualified class name for convenience.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_extend">extend</a>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)
+                    <p>An object should be extended from.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_extendName">extendName</a>(string $fullyQualifiedName)
+                    <p>Same as extend() but accepts a fully qualified class name for convenience.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_implement">implement</a>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)
+                    <p>An interface that this object will implement.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_implementName">implementName</a>(string $fullyQualifiedName)
+                    <p>Same as implement() but accepts a fully qualified class name for convenience.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_objectVariable">objectVariable</a>($scope, <a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)
+                    <p>Adds a variable into the class to represent the specified object.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_objectVariableName">objectVariableName</a>($scope, $fullyQualifiedName)
+                    <p>Same as objectVariable() but accepts a fully qualified name string in place of an object definition for convenience.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_defineVariable">defineVariable</a>(<a href="../../JennyRaider/ObjectBuilder/VariableDefinition.html"><abbr title="JennyRaider\ObjectBuilder\VariableDefinition">VariableDefinition</abbr></a> $variableDefinition)
+                    <p>Very simply defines the specified variable inside the object.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_defineVariableName">defineVariableName</a>($scope, $name, $type, $description = null)
+                    <p>Same as defineVariable but takes a series of parameters and constructs the VariableDefinition object rather than requiring the object to be pre-defined.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_make">make</a>()
+                    <p>Returns the object definition containing all of the parameters captured by the builder.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 30</div>
+        <code>            public            
+    <strong>__construct</strong>(string $fullyQualifiedName, string $type)</code>
+    </h3>
+    <div class="details">
+        <p>The constructor takes 2 arguments in order to build the base object definition it requires.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$fullyQualifiedName</td>
+                <td>Example: MyApp\Component\ClassName</td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$type</td>
+                <td>Example: "class" or "interface" or "final class"</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_imports">
+        <div class="location">at line 38</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>imports</strong>(<a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a> $objectDefintion)</code>
+    </h3>
+    <div class="details">
+        <p>Adds a definition to import, e.g.</p>
+        <p><ul>
+<li>"use" in the top of the file.</li>
+</ul>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a></td>
+                <td>$objectDefintion</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_importsName">
+        <div class="location">at line 49</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>importsName</strong>(string $fullyQualifiedName)</code>
+    </h3>
+    <div class="details">
+        <p>Rather than define and object and pass it to import, you can simply use this function for convenience and give it a fully qualified class name.</p>
+        <p>The builder will create the object defintion for
+you and call the imports() function.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$fullyQualifiedName</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_injects">
+        <div class="location">at line 59</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>injects</strong>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)</code>
+    </h3>
+    <div class="details">
+        <p>Specifies an object that should be imported and then injected into a constructor.</p>
+        <p>This will also create the related class variable as
+necessary.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a></td>
+                <td>$objectDefinition</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_injectsName">
+        <div class="location">at line 69</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>injectsName</strong>($fullyQualifiedName, $alias = null)</code>
+    </h3>
+    <div class="details">
+        <p>Same as injects but accetps a fully qualified class name instead of a pre-built object definition for convenience.</p>
+        <p>You may also pass an
+alias if you want the import to be alias'd.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$fullyQualifiedName</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$alias</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_uses">
+        <div class="location">at line 78</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>uses</strong>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)</code>
+    </h3>
+    <div class="details">
+        <p>Specifies a trait to be used by the object.</p>
+        <p>This is a "use" statement
+inside the class definition.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a></td>
+                <td>$objectDefinition</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_usesName">
+        <div class="location">at line 86</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>usesName</strong>(string $fullyQualifiedName)</code>
+    </h3>
+    <div class="details">
+        <p>Same as uses() but accepts a fully qualified class name for convenience.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$fullyQualifiedName</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_extend">
+        <div class="location">at line 95</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>extend</strong>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)</code>
+    </h3>
+    <div class="details">
+        <p>An object should be extended from.</p>
+        <p>The generated definition will contain
+methods to easily generate the "object extends other_object" statement.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a></td>
+                <td>$objectDefinition</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_extendName">
+        <div class="location">at line 103</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>extendName</strong>(string $fullyQualifiedName)</code>
+    </h3>
+    <div class="details">
+        <p>Same as extend() but accepts a fully qualified class name for convenience.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$fullyQualifiedName</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_implement">
+        <div class="location">at line 112</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>implement</strong>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)</code>
+    </h3>
+    <div class="details">
+        <p>An interface that this object will implement.</p>
+        <p>You can call this method
+multiple times to implement multiple interfaces.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a></td>
+                <td>$objectDefinition</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_implementName">
+        <div class="location">at line 120</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>implementName</strong>(string $fullyQualifiedName)</code>
+    </h3>
+    <div class="details">
+        <p>Same as implement() but accepts a fully qualified class name for convenience.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$fullyQualifiedName</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_objectVariable">
+        <div class="location">at line 137</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>objectVariable</strong>($scope, <a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)</code>
+    </h3>
+    <div class="details">
+        <p>Adds a variable into the class to represent the specified object.</p>
+        <p>For scope,
+specify "private", "protected" or "public". You may also prefix scope with
+"final" if desired.</p>
+
+<p>This function will take the name of the specified object, strip out any generally
+undesired words (Interface, Class, etc.) and create a pretty variable name
+that will be defined in the class.</p>
+
+<p>E.g.: An object named "UserRepositoryInterface" would be defined in the class
+      as "$userRepository"</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$scope</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td><a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a></td>
+                <td>$objectDefinition</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_objectVariableName">
+        <div class="location">at line 146</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>objectVariableName</strong>($scope, $fullyQualifiedName)</code>
+    </h3>
+    <div class="details">
+        <p>Same as objectVariable() but accepts a fully qualified name string in place of an object definition for convenience.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$scope</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$fullyQualifiedName</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_defineVariable">
+        <div class="location">at line 154</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>defineVariable</strong>(<a href="../../JennyRaider/ObjectBuilder/VariableDefinition.html"><abbr title="JennyRaider\ObjectBuilder\VariableDefinition">VariableDefinition</abbr></a> $variableDefinition)</code>
+    </h3>
+    <div class="details">
+        <p>Very simply defines the specified variable inside the object.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="../../JennyRaider/ObjectBuilder/VariableDefinition.html"><abbr title="JennyRaider\ObjectBuilder\VariableDefinition">VariableDefinition</abbr></a></td>
+                <td>$variableDefinition</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_defineVariableName">
+        <div class="location">at line 164</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr>
+    <strong>defineVariableName</strong>($scope, $name, $type, $description = null)</code>
+    </h3>
+    <div class="details">
+        <p>Same as defineVariable but takes a series of parameters and constructs the VariableDefinition object rather than requiring the object to be pre-defined.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$scope</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$name</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$type</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$description</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinitionBuilder">ObjectDefinitionBuilder</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_make">
+        <div class="location">at line 172</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr>
+    <strong>make</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Returns the object definition containing all of the parameters captured by the builder.</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

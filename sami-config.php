@@ -15,7 +15,7 @@ return new Sami($iterator, array(
     'theme'                => 'enhanced',
     'versions'             => $versions,
     'title'                => 'JennyRaider\ObjectBuilder',
-    'build_dir'            => __DIR__.'/docs/code/%version%',
-    'cache_dir'            => __DIR__.'/docs-cache/code/%version%',
+    'build_dir'            => __DIR__.'/docs/objectbuilder/%version%',
+    'cache_dir'            => __DIR__.'/docs-cache/objectbuilder/%version%',
     'default_opened_level' => 2,
 ));
