@@ -1,9 +1,9 @@
-<?php namespace JennyRaider\Code;
+<?php namespace JennyRaider\ObjectBuilder;
 
 class ObjectPresenter {
     
     /**
-     * @var JennyRaider\Code\ObjectDefinition
+     * @var JennyRaider\ObjectBuilder\ObjectDefinition
      */
     protected $objectDefinition;
     

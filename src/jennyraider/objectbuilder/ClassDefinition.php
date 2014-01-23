@@ -1,4 +1,4 @@
-<?php namespace JennyRaider\Code;
+<?php namespace JennyRaider\ObjectBuilder;
 
 class ClassDefinition extends ObjectDefinition {
     

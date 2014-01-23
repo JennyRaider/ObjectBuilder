@@ -1,4 +1,4 @@
-<?php namespace JennyRaider\Code;
+<?php namespace JennyRaider\ObjectBuilder;
 
 use Exception;
 
@@ -213,7 +213,7 @@ class ObjectNameDefinition {
      * 
      * @param string    $scope ("public", "private" or "protected")
      * @param string    $description
-     * @return JennyRaider\Code\VariableDefinition
+     * @return JennyRaider\ObjectBuilder\VariableDefinition
      */
     public function getVariableDefinition($scope, $description = null)
     {

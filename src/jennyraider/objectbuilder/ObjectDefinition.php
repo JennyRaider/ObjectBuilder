@@ -1,4 +1,4 @@
-<?php namespace JennyRaider\Code;
+<?php namespace JennyRaider\ObjectBuilder;
 
 use Exception;
 
@@ -64,7 +64,7 @@ class ObjectDefinition extends ObjectNameDefinition {
     }
 
     /**
-     * @return JennyRaider\Code\ObjectPresenter
+     * @return JennyRaider\ObjectBuilder\ObjectPresenter
      */
     public function presenter()
     {

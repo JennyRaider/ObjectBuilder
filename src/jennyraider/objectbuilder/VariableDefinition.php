@@ -1,4 +1,4 @@
-<?php namespace JennyRaider\Code;
+<?php namespace JennyRaider\ObjectBuilder;
 
 class VariableDefinition {
 
@@ -18,7 +18,7 @@ class VariableDefinition {
     public $type;
 
     /**
-     * @var JennyRaider\Code\ObjectNameDefinition
+     * @var JennyRaider\ObjectBuilder\ObjectNameDefinition
      */
     public $objectNameDefinition;
     
