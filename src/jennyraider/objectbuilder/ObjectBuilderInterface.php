@@ -1,13 +1,11 @@
 <?php
 
 /**
- * The ObjectBuilder interface is used to construct objects that describe real
- * PHP objects, e.g. - A class, an interface or a trait. Once the object is
- * fully described, it can then be made and passed to some form of view
- * or template. The made Object will contain all of the information
- * required in order for the view to create a fully defined
- * object including namespace, imports, extends and
- * other meta information.
+ * The ObjectBuilder interface is the contract implemented by other packages in
+ * order to build an ObjectDefinition. Crafting an ObjectDefinition by hand is
+ * achievable but tedious, this interface and the underlying implementation
+ * makes it much easier to define objects, it has a fluent interface and
+ * much more user-friendly syntax.
  *
  * @category    JennyRaider
  * @package     ObjectBuilder
@@ -25,7 +23,7 @@ interface ObjectBuilderInterface {
      * The constructor takes 2 arguments in order to build the base object definition it requires.
      *
      * @param string    $fullyQualifiedName     Example: MyApp\Component\ClassName
-     * @param string    $type                   Example: "class" or "interface" or "final class"
+     * @param string    $type                   Example: "class" or "interface" or "final class" or "trait" etc.
      */
     public function __construct($fullyQualifiedName, $type);
 
