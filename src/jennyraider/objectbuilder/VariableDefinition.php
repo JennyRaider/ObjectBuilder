@@ -78,7 +78,7 @@ class VariableDefinition {
     public function get($name, $default = false)
     {
         $attributes = $this->toArray();
-        if(isset($attributes[$name])) return $attributes['name'];
+        if(isset($attributes[$name])) return $attributes[$name];
         return $default;
     }
     
