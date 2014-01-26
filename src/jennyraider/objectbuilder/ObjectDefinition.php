@@ -47,7 +47,7 @@ class ObjectDefinition extends ObjectNameDefinition {
      */
     public function add($attributeName, $item)
     {
-        if(!isset($this->attributes[$attributeName])) throw new Exception('ClassDefinition: Invalid attribute "'.$attributeName.'" passed to add method.');
+        if(!isset($this->attributes[$attributeName])) throw new Exception('ObjectDefinition: Invalid attribute "'.$attributeName.'" passed to add method.');
         $this->attributes[$attributeName][] = $item;
     }
     
@@ -64,6 +64,9 @@ class ObjectDefinition extends ObjectNameDefinition {
     }
 
     /**
+     * Returns the presenter for this definition which makes it easier to consume
+     * by a template or other front-end view.
+     *
      * @return JennyRaider\ObjectBuilder\ObjectPresenter
      */
     public function presenter()
@@ -71,6 +74,14 @@ class ObjectDefinition extends ObjectNameDefinition {
         return new ObjectPresenter($this);
     }
     
+    /**
+     * Makes a simple array representing all the attributes of the object and returns it.
+     * This is useful for consuming an ObjectDefinition from a template or other view.
+     * "toArray()" is not used internally for any reason, it is here simply as a
+     * helper function for views that use ObjectDefinitions.
+     *
+     * @return array
+     */
     public function toArray()
     {
         $parentArray = parent::toArray();
@@ -83,23 +94,49 @@ class ObjectDefinition extends ObjectNameDefinition {
         return array_merge($parentArray, $thisArray);
     }
     
+    /**
+     * Returns a string representation of the object, currently this happens simply
+     * by taking the toArray() function and converting the results into a string
+     * using print_r.
+     * 
+     * @return string
+     */
     public function __toString()
     {
         return print_r($this->toArray(), true);
     }
     
+    /**
+     * Looks through the $attributes property and returns the associated value.
+     * 
+     * @return mixed
+     */
     public function __get($name)
     {
         if(in_array($name, array_keys($this->attributes))) return $this->attributes[$name];
     }
     
-    public function get($key)
+    /**
+     * Looks for a getter method matching the name "get" . $key and returns the
+     * result if found. If not, look for $key in the attributes property and if
+     * all else fails, returns $default.
+     * 
+     * @return mixed
+     */
+    public function get($key, $default = false)
     {
         $getterName = 'get' . ucfirst($key);
         if(method_exists($this, $getterName)) return $this->{$getterName}();
-        return $this->attributes[$key];
+        if(isset($this->attributes[$key])) return $this->attributes[$key];
+        return $default;
     }
     
+    /**
+     * Simple getter that returns the type of object, e.g. - "class", "interface",
+     * "final class", "trait" etc..
+     * 
+     * @return string
+     */
     public function getType()
     {
         return $this->type;
