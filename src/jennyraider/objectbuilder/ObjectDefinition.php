@@ -62,10 +62,10 @@ class ObjectDefinition extends ObjectNameDefinition {
     /**
      * Adds an item to one of the attribute arrays. Examples....
      * 
-     *    $this->import($someClassNameDefintion);
-     *    $this->variable($someVariableDefinition);
-     *    $this->inject($someClassNameDefinition);
-     *    $this->use($someClassNameDefinition);
+     *    $this->add('import', $someClassNameDefintion);
+     *    $this->add('variable', $someVariableDefinition);
+     *    $this->add('inject', $someClassNameDefinition);
+     *    $this->add('use', $someClassNameDefinition);
      * 
      * @param string $attributeName
      * @param object $item
