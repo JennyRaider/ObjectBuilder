@@ -17,12 +17,62 @@ class ObjectBuilderTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('JennyRaider\ObjectBuilder\ObjectDefinition', $this->builder->make());
     }
     
-    public function testDefinitionExtendsFoo()
+    public function testExtendsFoo()
     {
         $this->builder->extendName('MyApp\Component\Foo');
         $extends = $this->builder->make()->get('extend');
         $foo = $extends[0];
         $this->assertTrue($foo->get('name') === 'Foo');
     }
+    
+    public function testInjectsFoo()
+    {
+        $this->builder->injectsName('MyApp\Component\Foo');
+        $injects = $this->builder->make()->get('inject');
+        $foo = $injects[0];
+        $this->assertTrue($foo->get('name') === 'Foo');
+    }
+    
+    public function testImportsFoo()
+    {
+        $this->builder->importsName('MyApp\Component\Foo');
+        $imports = $this->builder->make()->get('import');
+        $foo = $imports[0];
+        $this->assertTrue($foo->get('name') === 'Foo');
+    }
+    
+    public function testUsesFoo()
+    {
+        $this->builder->usesName('MyApp\Component\Foo');
+        $uses = $this->builder->make()->get('use');
+        $foo = $uses[0];
+        $this->assertTrue($foo->get('name') === 'Foo');
+    }
+    
+    public function testImplementsFooInterface()
+    {
+        $this->builder->implementName('MyApp\Component\FooInterface');
+        $implements = $this->builder->make()->get('implement');
+        $foo = $implements[0];
+        $this->assertTrue($foo->get('name') === 'FooInterface');
+    }
+    
+    public function testDefinesVariableFoo()
+    {
+        $this->builder->defineVariableName('public', 'foo', 'string', 'The variable that holds foo.');
+        $variables = $this->builder->make()->get('variable');
+        $foo = $variables[0];
+        $this->assertTrue($foo->get('name') === 'foo');
+    }
+    
+    public function testStripInterface()
+    {
+        $this->builder->injectsName('MyApp\Component\FooObjectInterface');
+        $injects = $this->builder->make()->get('inject');
+        $foo = $injects[0];
+        $this->assertTrue($foo->get('varName') === 'fooObject');
+    }
+
+    //public function test
     
 }
