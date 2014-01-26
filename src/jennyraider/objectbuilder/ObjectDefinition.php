@@ -1,4 +1,23 @@
-<?php namespace JennyRaider\ObjectBuilder;
+<?php
+
+/**
+ * An ObjectDefinition is a group of meta informatino that describes a real PHP object.
+ *
+ * It can describe any native PHP object, a class, an interface or a trait etc.. After
+ * fully describing an object as an ObjectDefinion, the ObjectDefinition can then be
+ * passed to a view or template. The ObjectDefinition will contain all of the info
+ * required in order for the view to create a fully defined object including
+ * namespace, imports, extends, implements, variables and other information.
+ * 
+ * @category    JennyRaider
+ * @package     ObjectBuilder
+ * @author      Gary Saunders <gary@codenamegary.com>
+ * @copyright  2014 JennyRaider
+ * @license    http://opensource.org/licenses/MIT   MIT License
+ * @link       https://bitbucket.org/jennyraider/objectbuilder
+ */
+ 
+namespace JennyRaider\ObjectBuilder;
 
 use Exception;
 
@@ -7,7 +26,7 @@ class ObjectDefinition extends ObjectNameDefinition {
     /**
      * The type of object to define, can be any valid object type.
      * 
-     * @var string  May be "class", "trait", "abstract class" or "interface", any could be prefixed with "final" if desired.
+     * @var string  May be "class", "trait", "abstract class" or "interface", can be prefixed with "final" if desired.
      */
     public $type = "class";
     
@@ -18,11 +37,17 @@ class ObjectDefinition extends ObjectNameDefinition {
      * @var array
      */    
     protected $attributes = array(
+        // These are classes from other namespaces to be used
         'import' => array(),
+        // These are traits to compose into the class
         'use' => array(),
+        // Variables to be defined as class vars
         'variable' => array(),
+        // Classes to import and inject into the constructor
         'inject' => array(),
+        // Google it
         'extend' => array(),
+        // Google it
         'implement' => array(),
     );
     
