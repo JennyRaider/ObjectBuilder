@@ -75,18 +75,6 @@ class ObjectDefinition extends ObjectNameDefinition {
         if(!isset($this->attributes[$attributeName])) throw new Exception('ObjectDefinition: Invalid attribute "'.$attributeName.'" passed to add method.');
         $this->attributes[$attributeName][] = $item;
     }
-    
-    /**
-     * Magic method to handle dispatching method calls for adding items
-     * to the attributes array. Will be triggered if $name matches
-     * one of the array keys from $this->attributes
-     */
-    public function __call($name, $arguments)
-    {
-        $name = trim(strtolower($name));
-        if(in_array($name, array_keys($this->attributes))) $this->add($name, $arguments[0]);
-        if(strlen($name) > 3 and substr($name, 0, 3) == "get" and in_array(substr($name, 2), array_keys($this->attributes)) !== false) return $this->attributes[substr($name, 2)];
-    }
 
     /**
      * Returns the presenter for this definition which makes it easier to consume
