@@ -111,7 +111,7 @@ class ObjectBuilder implements ObjectBuilderInterface {
      */
     public function implement(ObjectDefinition $objectDefinition)
     {
-        $this->imports($objectDefintion);
+        $this->imports($objectDefinition);
         $this->objectDefinition->add('implement', $objectDefinition);
         return $this;
     }
