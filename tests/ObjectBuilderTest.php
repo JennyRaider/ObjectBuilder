@@ -20,7 +20,8 @@ class ObjectBuilderTest extends PHPUnit_Framework_TestCase {
     public function testExtendsFoo()
     {
         $this->builder->extendName('MyApp\Component\Foo');
-        $extends = $this->builder->make()->get('extend');
+        $objectDefinition = $this->builder->make();
+        $extends = $objectDefinition->get('extend');
         $foo = $extends[0];
         $this->assertTrue($foo->get('name') === 'Foo');
     }
@@ -57,6 +58,16 @@ class ObjectBuilderTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($foo->get('name') === 'FooInterface');
     }
     
+    public function testDefinesObjectFoo()
+    {
+        $this->builder->objectVariableName('public', 'MyApp\Component\FooObject');
+        $variables = $this->builder->make()->get('variable');
+        $object = $variables[0];
+        $this->assertTrue($object->objectNameDefinition->get('name') === 'FooObject');
+        $this->assertTrue($object->getTypeHint() === 'MyApp\Component\FooObject');
+        $this->assertTrue($object->get('name') === 'fooObject');
+    }
+    
     public function testDefinesVariableFoo()
     {
         $this->builder->defineVariableName('public', 'foo', 'string', 'The variable that holds foo.');
@@ -73,6 +84,4 @@ class ObjectBuilderTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($foo->get('varName') === 'fooObject');
     }
 
-    //public function test
-    
 }
