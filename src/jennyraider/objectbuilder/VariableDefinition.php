@@ -40,7 +40,7 @@ class VariableDefinition {
      * If the variable represents an objectNameDefinition, this function
      * will return the fully qualified name of the object it represents.
      * If the variable does NOT represent an object, this function will
-     * return a blank string.
+     * return false.
      * 
      * @return string
      */
