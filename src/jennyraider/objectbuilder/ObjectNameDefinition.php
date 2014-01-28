@@ -234,5 +234,21 @@ class ObjectNameDefinition {
         $string .= "Full: " . $this->getFullyQualifiedName() . "\r\n";
         return $string;
     }
+    
+    public function setFullyQualifiedName($fullyQualifiedName)
+    {
+        $this->fullyQualifiedName = $fullyQualifiedName;
+    }
+    
+    public function setNamespace($namespace)
+    {
+        $this->setFullyQualifiedName(trim($namespace, '\\') . $this->getName());
+    }
+
+    public function setNamespaces(array $namespaces)
+    {
+        $namespace = implode('\\', $namespaces);
+        $this->setNamespace($namespace);
+    }
 
 }
