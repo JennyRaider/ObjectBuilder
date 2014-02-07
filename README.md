@@ -110,6 +110,10 @@ Will produce (shortened for brevity)...
       }
     }
 
+### More Examples
+
+The best place to look for additional examples are the unit tests included with the package.
+
 # FAQ
 
 *Why the inconsistency between singular and plural forms of things, e.g. - $builder->implement vs. $builder->implements?*
