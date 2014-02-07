@@ -8,7 +8,7 @@ ObjectBuilder is a utility for fully describing and building the schema of an ob
 
 API Documentation can be found at:
 
-    [http://docs.jennyraider.com/objectbuilder](http://docs.jennyraider.com/objectbuilder)
+[http://docs.jennyraider.com/objectbuilder](http://docs.jennyraider.com/objectbuilder)
 
 ## Example Usage
 
@@ -23,6 +23,7 @@ API Documentation can be found at:
 
 Will produce...  
 
+    <?php
     array(12) {
       'name' => string(6) "Object"
       'varName' => string(6) "object"
@@ -33,18 +34,12 @@ Will produce...
       'namespace' => string(15) "MyApp\Component"
       'fullName' => string(22) "MyApp\Component\Object"
       'type' => string(5) "class"
-      'import' => array(0) {
-      }
-      'use' => array(0) {
-      }
-      'variable' => array(0) {
-      }
-      'inject' => array(0) {
-      }
-      'extend' => array(0) {
-      }
-      'implement' => array(0) {
-      }
+      'import' => array(0) { }
+      'use' => array(0) { }
+      'variable' => array(0) { }
+      'inject' => array(0) { }
+      'extend' => array(0) { }
+      'implement' => array(0) { }
     }
 
 ### Example 2: Extending and Implementing
@@ -62,6 +57,7 @@ This example defines a class that extends Foo, implements FooInterface and requi
 
 Will produce (shortened for brevity)...
 
+    <?php
     array(12) {
       'name' => string(6) "Object"
       'varName' => string(6) "object"
