@@ -169,4 +169,12 @@ interface ObjectBuilderInterface {
      */
     public function make();
 
+    /**
+     * Returns the presenter that represents the object made
+     * by the builder.
+     *
+     * @return JennyRaider\ObjectBuilder\ObjectPresenter
+     */
+    public function present();
+
 }

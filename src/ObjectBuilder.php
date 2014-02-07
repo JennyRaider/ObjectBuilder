@@ -189,4 +189,12 @@ class ObjectBuilder implements ObjectBuilderInterface {
         return $this->objectDefinition;
     }
     
+    /**
+     * @return JennyRaider\ObjectBuilder\ObjectPresenter
+     */
+    public function present()
+    {
+        return $this->make()->presenter();
+    }
+    
 }
