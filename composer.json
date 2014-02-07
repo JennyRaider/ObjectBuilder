@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "JennyRaider\\ObjectBuilder\\": "src/jennyraider/objectbuilder/"
+            "JennyRaider\\ObjectBuilder\\": "src/"
         }
     },
     "minimum-stability": "dev"
