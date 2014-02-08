@@ -8,18 +8,19 @@ class ObjectDefinitionTest extends PHPUnit_Framework_TestCase {
     
     public function setUp()
     {
-        $this->definition = new ObjectDefinition('MyApp\Component\BoogerFace');
+        // Making an abstract class called booger interface because why not!
+        $this->definition = new ObjectDefinition('MyApp\Component\AbstractBoogerInterface', 'abstract class');
     }
     
     public function testToArray()
     {
         $expectedArray = array(
-            'name' => 'BoogerFace',
-            'varName' => 'boogerFace',
+            'name' => 'AbstractBoogerInterface',
+            'varName' => 'booger',
             'namespaces' => array('MyApp', 'Component'),
             'namespace' => 'MyApp\Component',
-            'fullName' => 'MyApp\Component\BoogerFace',
-            'type' => 'class',
+            'fullName' => 'MyApp\Component\AbstractBoogerInterface',
+            'type' => 'abstract class',
             'import' => array(),
             'use' => array(),
             'variable' => array(),
@@ -35,7 +36,7 @@ class ObjectDefinitionTest extends PHPUnit_Framework_TestCase {
     
     public function testGetName()
     {
-        $this->assertEquals('BoogerFace', $this->definition->get('name'));
+        $this->assertEquals('AbstractBoogerInterface', $this->definition->get('name'));
     }
     
     public function testGetBooger()
