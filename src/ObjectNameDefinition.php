@@ -220,11 +220,21 @@ class ObjectNameDefinition {
         return new VariableDefinition($scope, $this->getVarName(), 'object', $this, $description);
     }
     
+    /*
+     * Creates a well formatted array containing all the data for this name definition.
+     * 
+     * @return array
+     */
     public function toArray()
     {
         return array_merge($this->getNameParts(), array('fullName' => $this->getFullyQualifiedName()));
     }
     
+    /**
+     * Convenience method for echo'ing and dumping a name definition.
+     * 
+     * @return string
+     */
     public function __toString()
     {
         $string = "";
@@ -235,16 +245,27 @@ class ObjectNameDefinition {
         return $string;
     }
     
+    /**
+     * Sets a new fully qualified name to be parsed by the definition.
+     */
     public function setFullyQualifiedName($fullyQualifiedName)
     {
+        $this->nameParts = null;
         $this->fullyQualifiedName = $fullyQualifiedName;
     }
     
+    /**
+     * Switches out the namespace that the object resides in.
+     */
     public function setNamespace($namespace)
     {
-        $this->setFullyQualifiedName(trim($namespace, '\\') . $this->getName());
+        $this->setFullyQualifiedName(trim($namespace, '\\') . '\\' . $this->getName());
     }
 
+    /**
+     * Sets a new namespace for the object using the given array of
+     * namespace segments.
+     */
     public function setNamespaces(array $namespaces)
     {
         $namespace = implode('\\', $namespaces);
