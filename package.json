@@ -1,0 +1,20 @@
+{
+	"name": "objectbuilder",
+	"version": "0.0.1",
+	"author": "Gary Saunders <gary@codenamegary.com>",
+	"contributors": [
+		{
+			"name": "Gary Saunders",
+			"email": "gary@codenamegary.com"
+		},
+		{
+			"name": "Joel Blodgett",
+			"email": "joel.blodgett@gmail.com"
+		}
+	],
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-contrib-watch": "~0.5.3",
+		"grunt-phpunit": "~0.3.2"
+	}
+}
