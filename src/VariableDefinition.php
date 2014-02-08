@@ -18,6 +18,8 @@
  
 namespace JennyRaider\ObjectBuilder;
 
+use InvalidArgumentException;
+
 class VariableDefinition {
 
     /**
@@ -114,7 +116,8 @@ class VariableDefinition {
     public function get($name, $default = false)
     {
         $attributes = $this->toArray();
-        if(isset($attributes[$name])) return $attributes[$name];
+        if(!array_key_exists($name, $attributes)) throw new InvalidArgumentException(get_called_class() . ': Attribute "' . $name . '" is not defined.');
+        if(array_key_exists($name, $attributes) and $attributes[$name] !== null) return $attributes[$name];
         return $default;
     }
     
