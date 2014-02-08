@@ -31,8 +31,7 @@ class ObjectBuilder implements ObjectBuilderInterface {
      */
     public function __construct($fullyQualifiedName, $type)
     {
-        $this->objectDefinition = new ObjectDefinition($fullyQualifiedName);
-        $this->objectDefinition->type = $type;
+        $this->objectDefinition = new ObjectDefinition($fullyQualifiedName, $type);
     }
     
     /**
