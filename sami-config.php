@@ -9,7 +9,7 @@ $iterator = Finder::create()
     ->name('*.php')
     ->in($dir = (__DIR__ . '/src'));
 
-$versions = GitVersionCollection::create($dir)->add('master', 'master branch');
+$versions = GitVersionCollection::create($dir)->add('master', 'master branch')->add('dev', 'dev branch');
 
 return new Sami($iterator, array(
     'theme'                => 'enhanced',
