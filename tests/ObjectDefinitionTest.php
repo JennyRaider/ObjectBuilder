@@ -55,4 +55,9 @@ class ObjectDefinitionTest extends PHPUnit_Framework_TestCase {
         $this->definition->add('booger', 'stuff');
     }
     
+    public function testGetVarName()
+    {
+        $this->assertEquals('booger', $this->definition->get('varName'));
+    }
+    
 }
