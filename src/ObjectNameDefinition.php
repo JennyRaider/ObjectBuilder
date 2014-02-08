@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * Any given object made by the object builder is comprised of 3 main types of pseudo
+ * objects; the name definition, variable definitions and the object definition
+ * itself. The name definition handles processing of names including parsing
+ * out "Interface", "Abstract" and "Concrete" from object names when making
+ * corresponding variable names. The object definition is extended from
+ * a name definition, and a variable definition will contain a name
+ * definition if the variable represents an object.
+ *
+ * @category    JennyRaider
+ * @package     ObjectBuilder
+ * @author      Gary Saunders <gary@codenamegary.com>
+ * @copyright   2014 JennyRaider
+ * @license     http://opensource.org/licenses/MIT   MIT License
+ * @link        https://bitbucket.org/jennyraider/objectbuilder
+ */
+
 namespace JennyRaider\ObjectBuilder;
 
 use Exception;
@@ -59,16 +76,15 @@ class ObjectNameDefinition {
     }
 
     /**
-     * Aliases are used when generating "Use" statements in the import section
-     * of the object. E.g...
-     * 
-     * use Namespace\ObjectName as Alias;
-     *
-     * @param string $alias
+     * Sets a new fully qualified name to be parsed by the definition.
      */
-    public function setAlias($alias)
+    public function setFullyQualifiedName($fullyQualifiedName)
     {
-        $this->alias = $alias;
+        // Nameparts is used to get the various pieces of a name, here
+        // we null it out as it is cached by the getNameParts method
+        // for minor performance optimization.
+        $this->nameParts = null;
+        $this->fullyQualifiedName = $fullyQualifiedName;
         return $this;
     }
     
@@ -81,6 +97,21 @@ class ObjectNameDefinition {
     }
     
     /**
+     * Aliases are used when generating "Use" statements in the import section
+     * of the object. E.g...
+     * 
+     * use Namespace\ObjectName as Alias;
+     *
+     * @param string $alias
+     * @return JennyRaider\ObjectBuilder\ObjectNameDefinition
+     */
+    public function setAlias($alias)
+    {
+        $this->alias = $alias;
+        return $this;
+    }
+    
+    /**
      * Retrieves a part of the object name, valid parameters are...
      * 
      * "name", "namespace", "varName", "namespaces"
@@ -88,10 +119,10 @@ class ObjectNameDefinition {
      * @param string $partKey
      * @return mixed
      */
-    protected function getPart($partKey)
+    protected function getPart($partKey, $default = false)
     {
         $parts = $this->getNameParts();
-        return $parts[$partKey];
+        return isset($parts[$partKey]) ? $parts[$partKey] : $default;
     }
 
     /**
@@ -105,6 +136,18 @@ class ObjectNameDefinition {
     }
     
     /**
+     * Updates the object name.
+     * 
+     * @return JennyRaider\ObjectBuilder\ObjectNameDefinition
+     */
+    public function setName($name)
+    {
+        $namespace = $this->getNamespace();
+        $this->setFullyQualifiedName($namespace . '\\' . $name);
+        return $this;
+    }
+    
+    /**
      * See: $this->getVarNameFrom()
      *
      * @return string
@@ -115,16 +158,30 @@ class ObjectNameDefinition {
     }
     
     /**
-     * Will return an array of namespaces if they exist or false
-     * if the object is not in a namespace.
+     * Will return an array of namespaces if they exist or an empty
+     * array if the object is not in a namespace.
      *
-     * @return mixed
+     * @return array
      */
     public function getNamespaces()
     {
-        return $this->getPart('namespaces');
+        return $this->getPart('namespaces', array());
     }
-    
+
+    /**
+     * Sets a new namespace for the object using the given array of
+     * namespace segments.
+     *
+     * @param array     $namespaces
+     * @return JennyRaider\ObjectBuilder\ObjectNameDefinition
+     */
+    public function setNamespaces(array $namespaces)
+    {
+        $namespace = implode('\\', $namespaces);
+        $this->setNamespace($namespace);
+        return $this;
+    }
+
     /**
      * Returns the fully qualified namespace that the object will
      * be defined in if it exists or false if the object
@@ -134,9 +191,21 @@ class ObjectNameDefinition {
      */
     public function getNamespace()
     {
-        return $this->getPart('namespace');
+        return $this->getPart('namespace', false);
     }
     
+    /**
+     * Switches out the namespace that the object resides in.
+     * 
+     * @param string    $namespace  E.g. - 'MyApp\Component'
+     * @return JennyRaider\ObjectBuilder\ObjectNameDefinition
+     */
+    public function setNamespace($namespace)
+    {
+        $this->setFullyQualifiedName(trim($namespace, '\\') . '\\' . $this->getName());
+        return $this;
+    }
+
     /**
      * Explodes and parses $this->nameParts string into the name parts
      * needed to generate nice object definitions like the namespace,
@@ -149,7 +218,7 @@ class ObjectNameDefinition {
     protected function getNameParts()
     {
         if($this->nameParts) return $this->nameParts;
-        if(!$nameParts = explode('\\', $this->fullyQualifiedName)) throw new Exception('ClassName: Could not parse parts from class name "'.$this->fullyQualifiedName.'"');
+        if(!$nameParts = explode('\\', $this->fullyQualifiedName)) throw new Exception(get_called_class() . ': Could not parse parts from class name "'.$this->fullyQualifiedName.'"');
         if(count($nameParts) == 1)
         {
             $this->nameParts = array(
@@ -247,31 +316,4 @@ class ObjectNameDefinition {
         return $string;
     }
     
-    /**
-     * Sets a new fully qualified name to be parsed by the definition.
-     */
-    public function setFullyQualifiedName($fullyQualifiedName)
-    {
-        $this->nameParts = null;
-        $this->fullyQualifiedName = $fullyQualifiedName;
-    }
-    
-    /**
-     * Switches out the namespace that the object resides in.
-     */
-    public function setNamespace($namespace)
-    {
-        $this->setFullyQualifiedName(trim($namespace, '\\') . '\\' . $this->getName());
-    }
-
-    /**
-     * Sets a new namespace for the object using the given array of
-     * namespace segments.
-     */
-    public function setNamespaces(array $namespaces)
-    {
-        $namespace = implode('\\', $namespaces);
-        $this->setNamespace($namespace);
-    }
-
 }

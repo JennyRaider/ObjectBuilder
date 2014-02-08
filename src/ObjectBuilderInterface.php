@@ -10,9 +10,9 @@
  * @category    JennyRaider
  * @package     ObjectBuilder
  * @author      Gary Saunders <gary@codenamegary.com>
- * @copyright  2014 JennyRaider
- * @license    http://opensource.org/licenses/MIT   MIT License
- * @link       https://bitbucket.org/jennyraider/objectbuilder
+ * @copyright   2014 JennyRaider
+ * @license     http://opensource.org/licenses/MIT   MIT License
+ * @link        https://bitbucket.org/jennyraider/objectbuilder
  */
 
 namespace JennyRaider\ObjectBuilder;

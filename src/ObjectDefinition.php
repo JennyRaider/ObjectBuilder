@@ -3,7 +3,7 @@
 /**
  * An ObjectDefinition is a group of meta informatino that describes a real PHP object.
  *
- * It can describe any native PHP object, a class, an interface or a trait etc.. After
+ * It can describe any user defined PHP object, a class, or an interface etc.. After
  * fully describing an object as an ObjectDefinion, the ObjectDefinition can then be
  * passed to a view or template. The ObjectDefinition will contain all of the info
  * required in order for the view to create a fully defined object including
@@ -12,9 +12,9 @@
  * @category    JennyRaider
  * @package     ObjectBuilder
  * @author      Gary Saunders <gary@codenamegary.com>
- * @copyright  2014 JennyRaider
- * @license    http://opensource.org/licenses/MIT   MIT License
- * @link       https://bitbucket.org/jennyraider/objectbuilder
+ * @copyright   2014 JennyRaider
+ * @license     http://opensource.org/licenses/MIT   MIT License
+ * @link        https://bitbucket.org/jennyraider/objectbuilder
  */
  
 namespace JennyRaider\ObjectBuilder;
@@ -73,7 +73,7 @@ class ObjectDefinition extends ObjectNameDefinition {
      */
     public function add($attributeName, $item)
     {
-        if(!isset($this->attributes[$attributeName])) throw new Exception('ObjectDefinition: Invalid attribute "'.$attributeName.'" passed to add method.');
+        if(!isset($this->attributes[$attributeName])) throw new Exception(get_called_class() . ': Invalid attribute "'.$attributeName.'" passed to add method.');
         $this->attributes[$attributeName][] = $item;
     }
 
