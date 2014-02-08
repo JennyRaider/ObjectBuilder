@@ -39,9 +39,20 @@ class ObjectDefinitionTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals('AbstractBoogerInterface', $this->definition->get('name'));
     }
     
+    /**
+     * @expectedException InvalidArgumentException 
+     */
     public function testGetBooger()
     {
-        $this->assertEquals(false, $this->definition->get('booger', false));
+        $this->definition->get('booger', false);
+    }
+    
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testAddInvalidAttributeThrowsException()
+    {
+        $this->definition->add('booger', 'stuff');
     }
     
 }
