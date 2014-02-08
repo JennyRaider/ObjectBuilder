@@ -45,56 +45,51 @@
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getImplementsStatement">getImplementsStatement</a>()
-                    <p>
-</p>
+                    <p>Compiles and returns a string containing the "implements FooInterface, BazInterface" etc.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getExtendsStatement">getExtendsStatement</a>()
-                    <p>
-</p>
+                    <p>Compiles and returns the "extends OtherClass" part of the object definition.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getConstructorArgumentStatement">getConstructorArgumentStatement</a>()
-                    <p>
-</p>
+                    <p>Returns a compiled list of arguments to be injected into the constructor.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    mixed
                 </td>
                 <td class="last">
                     <a href="#method___get">__get</a>($name)
-                    <p>
-</p>
+                    <p>Passes through references to undefined properties to the underlying ObjectDefinition.</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    mixed
                 </td>
                 <td class="last">
                     <a href="#method___call">__call</a>($name, $arguments)
-                    <p>
-</p>
+                    <p>Passes through calls to undefined methods to the underlying ObjectDefinition.</p>
                 </td>
                 <td></td>
             </tr>
@@ -104,7 +99,7 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 10</div>
+        <div class="location">at line 31</div>
         <code>            public            
     <strong>__construct</strong>(<a href="../../JennyRaider/ObjectBuilder/ObjectDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectDefinition">ObjectDefinition</abbr></a> $objectDefinition)</code>
     </h3>
@@ -132,64 +127,89 @@
     </div>
 
                 <h3 id="method_getImplementsStatement">
-        <div class="location">at line 15</div>
-        <code>            public            
+        <div class="location">at line 43</div>
+        <code>            public            string
     <strong>getImplementsStatement</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
-        <p>
-</p>
+        <p>Compiles and returns a string containing the "implements FooInterface, BazInterface" etc.</p>
+        <p>for all of the interfaces that the object implements. Returns a blank string
+if the object does not implement any interfaces.</p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_getExtendsStatement">
-        <div class="location">at line 28</div>
-        <code>            public            
+        <div class="location">at line 62</div>
+        <code>            public            string
     <strong>getExtendsStatement</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
-        <p>
-</p>
+        <p>Compiles and returns the "extends OtherClass" part of the object definition.</p>
+        <p>If the object does not extend another class, returns a blank string.</p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method_getConstructorArgumentStatement">
-        <div class="location">at line 34</div>
-        <code>            public            
+        <div class="location">at line 74</div>
+        <code>            public            string
     <strong>getConstructorArgumentStatement</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
-        <p>
-</p>
+        <p>Returns a compiled list of arguments to be injected into the constructor.</p>
+        <p>If no
+dependencies (imports) are defined, returns a blank string.</p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method___get">
-        <div class="location">at line 46</div>
-        <code>            public            
+        <div class="location">at line 91</div>
+        <code>            public            mixed
     <strong>__get</strong>($name)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Passes through references to undefined properties to the underlying ObjectDefinition.</p>
         <p>
 </p>
         <div class="tags">
@@ -205,19 +225,28 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
     </div>
 
                 <h3 id="method___call">
-        <div class="location">at line 51</div>
-        <code>            public            
+        <div class="location">at line 101</div>
+        <code>            public            mixed
     <strong>__call</strong>($name, $arguments)</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Passes through calls to undefined methods to the underlying ObjectDefinition.</p>
         <p>
 </p>
         <div class="tags">
@@ -239,6 +268,16 @@
             </table>
 
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

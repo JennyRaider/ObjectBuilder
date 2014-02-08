@@ -57,8 +57,8 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method_setAlias">setAlias</a>(string $alias)
-                    <p>Aliases are used when generating "Use" statements in the import section of the object.</p>
+                    <a href="#method_setFullyQualifiedName">setFullyQualifiedName</a>($fullyQualifiedName)
+                    <p>Sets a new fully qualified name to be parsed by the definition.</p>
                 </td>
                 <td></td>
             </tr>
@@ -75,11 +75,31 @@
             </tr>
                     <tr>
                 <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setAlias">setAlias</a>(string $alias)
+                    <p>Aliases are used when generating "Use" statements in the import section of the object.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
                     string
                 </td>
                 <td class="last">
                     <a href="#method_getName">getName</a>()
                     <p>Returns the object name sans namespaces.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setName">setName</a>($name)
+                    <p>Updates the object name.</p>
                 </td>
                 <td></td>
             </tr>
@@ -95,11 +115,21 @@
             </tr>
                     <tr>
                 <td class="type">
-                    mixed
+                    array
                 </td>
                 <td class="last">
                     <a href="#method_getNamespaces">getNamespaces</a>()
-                    <p>Will return an array of namespaces if they exist or false if the object is not in a namespace.</p>
+                    <p>Will return an array of namespaces if they exist or an empty array if the object is not in a namespace.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setNamespaces">setNamespaces</a>(array $namespaces)
+                    <p>Sets a new namespace for the object using the given array of namespace segments.</p>
                 </td>
                 <td></td>
             </tr>
@@ -110,6 +140,16 @@
                 <td class="last">
                     <a href="#method_getNamespace">getNamespace</a>()
                     <p>Returns the fully qualified namespace that the object will be defined in if it exists or false if the object does not have a namespace defined.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setNamespace">setNamespace</a>(string $namespace)
+                    <p>Switches out the namespace that the object resides in.</p>
                 </td>
                 <td></td>
             </tr>
@@ -136,12 +176,11 @@
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    string
                 </td>
                 <td class="last">
                     <a href="#method___toString">__toString</a>()
-                    <p>
-</p>
+                    <p>Convenience method for echo'ing and dumping a name definition.</p>
                 </td>
                 <td></td>
             </tr>
@@ -151,7 +190,7 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 43</div>
+        <div class="location">at line 62</div>
         <code>            public            
     <strong>__construct</strong>(string $fullyQualifiedName = null)</code>
     </h3>
@@ -178,7 +217,7 @@
     </div>
 
                 <h3 id="method_getFullyQualifiedName">
-        <div class="location">at line 54</div>
+        <div class="location">at line 73</div>
         <code>            public            string
     <strong>getFullyQualifiedName</strong>()</code>
     </h3>
@@ -203,23 +242,22 @@
                     </div>
     </div>
 
-                <h3 id="method_setAlias">
-        <div class="location">at line 67</div>
+                <h3 id="method_setFullyQualifiedName">
+        <div class="location">at line 81</div>
         <code>            public            
-    <strong>setAlias</strong>(string $alias)</code>
+    <strong>setFullyQualifiedName</strong>($fullyQualifiedName)</code>
     </h3>
     <div class="details">
-        <p>Aliases are used when generating "Use" statements in the import section of the object.</p>
-        <p>E.g...</p>
-
-<p>use Namespace\ObjectName as Alias;</p>
+        <p>Sets a new fully qualified name to be parsed by the definition.</p>
+        <p>
+</p>
         <div class="tags">
                             <h4>Parameters</h4>
 
                     <table>
                     <tr>
-                <td>string</td>
-                <td>$alias</td>
+                <td></td>
+                <td>$fullyQualifiedName</td>
                 <td>
 </td>
             </tr>
@@ -232,7 +270,7 @@
     </div>
 
                 <h3 id="method_getAlias">
-        <div class="location">at line 76</div>
+        <div class="location">at line 94</div>
         <code>            public            string
     <strong>getAlias</strong>()</code>
     </h3>
@@ -258,8 +296,46 @@
                     </div>
     </div>
 
+                <h3 id="method_setAlias">
+        <div class="location">at line 108</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+    <strong>setAlias</strong>(string $alias)</code>
+    </h3>
+    <div class="details">
+        <p>Aliases are used when generating "Use" statements in the import section of the object.</p>
+        <p>E.g...</p>
+
+<p>use Namespace\ObjectName as Alias;</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$alias</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
                 <h3 id="method_getName">
-        <div class="location">at line 100</div>
+        <div class="location">at line 133</div>
         <code>            public            string
     <strong>getName</strong>()</code>
     </h3>
@@ -284,8 +360,45 @@
                     </div>
     </div>
 
+                <h3 id="method_setName">
+        <div class="location">at line 143</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+    <strong>setName</strong>($name)</code>
+    </h3>
+    <div class="details">
+        <p>Updates the object name.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$name</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
                 <h3 id="method_getVarName">
-        <div class="location">at line 110</div>
+        <div class="location">at line 155</div>
         <code>            public            string
     <strong>getVarName</strong>()</code>
     </h3>
@@ -311,12 +424,12 @@
     </div>
 
                 <h3 id="method_getNamespaces">
-        <div class="location">at line 121</div>
-        <code>            public            mixed
+        <div class="location">at line 166</div>
+        <code>            public            array
     <strong>getNamespaces</strong>()</code>
     </h3>
     <div class="details">
-        <p>Will return an array of namespaces if they exist or false if the object is not in a namespace.</p>
+        <p>Will return an array of namespaces if they exist or an empty array if the object is not in a namespace.</p>
         <p>
 </p>
         <div class="tags">
@@ -325,7 +438,44 @@
 
                     <table>
         <tr>
-            <td>mixed</td>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setNamespaces">
+        <div class="location">at line 178</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+    <strong>setNamespaces</strong>(array $namespaces)</code>
+    </h3>
+    <div class="details">
+        <p>Sets a new namespace for the object using the given array of namespace segments.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$namespaces</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></td>
             <td>
 </td>
         </tr>
@@ -337,7 +487,7 @@
     </div>
 
                 <h3 id="method_getNamespace">
-        <div class="location">at line 133</div>
+        <div class="location">at line 192</div>
         <code>            public            mixed
     <strong>getNamespace</strong>()</code>
     </h3>
@@ -362,8 +512,44 @@
                     </div>
     </div>
 
+                <h3 id="method_setNamespace">
+        <div class="location">at line 203</div>
+        <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr>
+    <strong>setNamespace</strong>(string $namespace)</code>
+    </h3>
+    <div class="details">
+        <p>Switches out the namespace that the object resides in.</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$namespace</td>
+                <td>E.g. - 'MyApp\Component'</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
                 <h3 id="method_getVariableDefinition">
-        <div class="location">at line 218</div>
+        <div class="location">at line 289</div>
         <code>            public            <abbr title="JennyRaider\ObjectBuilder\JennyRaider\ObjectBuilder\VariableDefinition">VariableDefinition</abbr>
     <strong>getVariableDefinition</strong>(string $scope, string $description = null)</code>
     </h3>
@@ -405,7 +591,7 @@
     </div>
 
                 <h3 id="method_toArray">
-        <div class="location">at line 223</div>
+        <div class="location">at line 299</div>
         <code>            public            
     <strong>toArray</strong>()</code>
     </h3>
@@ -422,17 +608,26 @@
     </div>
 
                 <h3 id="method___toString">
-        <div class="location">at line 228</div>
-        <code>            public            
+        <div class="location">at line 309</div>
+        <code>            public            string
     <strong>__toString</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Convenience method for echo'ing and dumping a name definition.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>

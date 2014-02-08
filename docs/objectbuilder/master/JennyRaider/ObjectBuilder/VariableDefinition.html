@@ -82,7 +82,7 @@
                     
                 </td>
                 <td class="last">
-                    <a href="#method___construct">__construct</a>($scope, $name, $type, <a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a> $objectNameDefinition = null, $description = null)
+                    <a href="#method___construct">__construct</a>(string $scope, string $name, string $type, <a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a> $objectNameDefinition = null, string|null $description = null)
                     <p>
 </p>
                 </td>
@@ -110,12 +110,21 @@
             </tr>
                     <tr>
                 <td class="type">
-                    
+                    array
                 </td>
                 <td class="last">
                     <a href="#method_toArray">toArray</a>()
-                    <p>
-</p>
+                    <p>Utility method for accessing the contents of the definition.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    mixed
+                </td>
+                <td class="last">
+                    <a href="#method_get">get</a>($name, $default = false)
+                    <p>Utility method for getting properties of the definition.</p>
                 </td>
                 <td></td>
             </tr>
@@ -125,9 +134,9 @@
         <h2>Details</h2>
 
                         <h3 id="method___construct">
-        <div class="location">at line 30</div>
+        <div class="location">at line 55</div>
         <code>            public            
-    <strong>__construct</strong>($scope, $name, $type, <a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a> $objectNameDefinition = null, $description = null)</code>
+    <strong>__construct</strong>(string $scope, string $name, string $type, <a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a> $objectNameDefinition = null, string|null $description = null)</code>
     </h3>
     <div class="details">
         <p>
@@ -139,34 +148,29 @@
 
                     <table>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$scope</td>
-                <td>
-</td>
+                <td>"public", "protected" or "private"</td>
             </tr>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$name</td>
-                <td>
-</td>
+                <td>The name of the variable.</td>
             </tr>
                     <tr>
-                <td></td>
+                <td>string</td>
                 <td>$type</td>
-                <td>
-</td>
+                <td>The native type of the variable, e.g. - "string", "array", "int", "float".</td>
             </tr>
                     <tr>
                 <td><a href="../../JennyRaider/ObjectBuilder/ObjectNameDefinition.html"><abbr title="JennyRaider\ObjectBuilder\ObjectNameDefinition">ObjectNameDefinition</abbr></a></td>
                 <td>$objectNameDefinition</td>
-                <td>
-</td>
+                <td>(optional) The Object this variable is representing.</td>
             </tr>
                     <tr>
-                <td></td>
+                <td>string|null</td>
                 <td>$description</td>
-                <td>
-</td>
+                <td>(optional) The description is used when generating a docblock for the variable.</td>
             </tr>
             </table>
 
@@ -177,14 +181,14 @@
     </div>
 
                 <h3 id="method_getTypeHint">
-        <div class="location">at line 47</div>
+        <div class="location">at line 72</div>
         <code>            public            string
     <strong>getTypeHint</strong>()</code>
     </h3>
     <div class="details">
         <p>If the variable represents an objectNameDefinition, this function will return the fully qualified name of the object it represents.</p>
         <p>If the variable does NOT represent an object, this function will
-return a blank string.</p>
+return false.</p>
         <div class="tags">
             
                             <h4>Return Value</h4>
@@ -203,14 +207,14 @@ return a blank string.</p>
     </div>
 
                 <h3 id="method_getHintOrType">
-        <div class="location">at line 61</div>
+        <div class="location">at line 86</div>
         <code>            public            string
     <strong>getHintOrType</strong>()</code>
     </h3>
     <div class="details">
         <p>If the variable represents an objectNameDefinition, this function will return the fully qualified name of the object it represents.</p>
         <p>If the variable does NOT represent an object, this function will
-return the type defined for this variable (string, array, etc).</p>
+return the native type defined for this variable (string, etc).</p>
         <div class="tags">
             
                             <h4>Return Value</h4>
@@ -229,17 +233,69 @@ return the type defined for this variable (string, array, etc).</p>
     </div>
 
                 <h3 id="method_toArray">
-        <div class="location">at line 67</div>
-        <code>            public            
+        <div class="location">at line 97</div>
+        <code>            public            array
     <strong>toArray</strong>()</code>
     </h3>
     <div class="details">
-        <p>
-</p>
+        <p>Utility method for accessing the contents of the definition.</p>
         <p>
 </p>
         <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_get">
+        <div class="location">at line 114</div>
+        <code>            public            mixed
+    <strong>get</strong>($name, $default = false)</code>
+    </h3>
+    <div class="details">
+        <p>Utility method for getting properties of the definition.</p>
+        <p>This is the
+method used by a template / view to get data.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td></td>
+                <td>$name</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td></td>
+                <td>$default</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
             
             
                     </div>
