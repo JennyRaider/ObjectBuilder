@@ -19,7 +19,7 @@
  
 namespace JennyRaider\ObjectBuilder;
 
-use Exception;
+use InvalidArgumentException;
 
 class ObjectDefinition extends ObjectNameDefinition {
     
@@ -73,7 +73,7 @@ class ObjectDefinition extends ObjectNameDefinition {
      */
     public function add($attributeName, $item)
     {
-        if(!isset($this->attributes[$attributeName])) throw new Exception(get_called_class() . ': Invalid attribute "'.$attributeName.'" passed to add method.');
+        if(!isset($this->attributes[$attributeName])) throw new InvalidArgumentException(get_called_class() . ': Invalid attribute "'.$attributeName.'" passed to add method.');
         $this->attributes[$attributeName][] = $item;
     }
 
@@ -141,7 +141,8 @@ class ObjectDefinition extends ObjectNameDefinition {
     {
         $getterName = 'get' . ucfirst($key);
         if(method_exists($this, $getterName)) return $this->{$getterName}();
-        if(isset($this->attributes[$key])) return $this->attributes[$key];
+        if(!array_key_exists($key, $this->attributes)) throw new InvalidArgumentException(get_called_class() . ': The requested attribute "' . $key . '" is not valid.');
+        if(array_key_exists($key, $this->attributes) and $this->attributes[$key]) return $this->attributes[$key];
         return $default;
     }
     
