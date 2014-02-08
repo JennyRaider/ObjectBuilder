@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./vendor/bin/sami.php update ./sami-config.php
