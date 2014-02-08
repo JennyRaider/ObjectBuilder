@@ -2,3 +2,4 @@
 .project
 /docs-cache
 composer.lock
+/node_modules
