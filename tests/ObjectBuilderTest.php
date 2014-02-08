@@ -1,7 +1,6 @@
 <?php
 
 use JennyRaider\ObjectBuilder\ObjectBuilder;
-use JennyRaider\ObjectBuilder\ObjectDefinition;
 
 class ObjectBuilderTest extends PHPUnit_Framework_TestCase {
     

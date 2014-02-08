@@ -1,4 +1,6 @@
-<?php namespace JennyRaider\ObjectBuilder;
+<?php
+
+namespace JennyRaider\ObjectBuilder;
 
 use Exception;
 
