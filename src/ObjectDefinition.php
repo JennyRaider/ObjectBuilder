@@ -54,8 +54,9 @@ class ObjectDefinition extends ObjectNameDefinition {
     /**
      * @param string $fullyQualifiedName
      */
-    public function __construct($fullyQualifiedName = null)
+    public function __construct($fullyQualifiedName = null, $type = 'class')
     {
+        $this->type = $type;
         parent::__construct($fullyQualifiedName);
     }
     
