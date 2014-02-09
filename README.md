@@ -1,5 +1,7 @@
 # JennyRaider\ObjectBuilder
 
+[![Build Status](https://travis-ci.org/JennyRaider/ObjectBuilder.png?branch=master)](https://travis-ci.org/JennyRaider/ObjectBuilder)
+
 ObjectBuilder is a utility for fully describing and building the schema of an object. JennyRaider uses the ObjectBuilder to describe an object (class, interface, etc.) and passes the resulting defintion to a view in order to more easily render a real file.
 
 *WARNING*: ObjectBuilder is, to some degree, opinionated about style. As the examples show, the built definitions do things like convert a StudlyCaps "ObjectName" to camel cased "objectName" when a variable of type ObjectName is to be used as a class variable. While the builder does permit and condone the usage of suffixes and prefixes like "Interface" and "Abstract" for naming, JennyRaider will strip those terms from the corresponding variable name of an object; if you define an object as having a class variable of type "FooRepositoryInterface", ObjectBuilder will include a corresponding class variable called "$fooRepository".
