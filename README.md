@@ -10,7 +10,7 @@ ObjectBuilder is a utility for fully describing and building the schema of an ob
 
 API Documentation can be found at:
 
-[http://docs.jennyraider.com/objectbuilder](http://docs.jennyraider.com/objectbuilder)
+[http://docs.jennyraider.com/objectbuilder](http://docs.jennyraider.com/api/objectbuilder)
 
 ## Example Usage
 
